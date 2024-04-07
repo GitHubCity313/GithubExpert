@@ -50,3 +50,11 @@ I'd be glad to explain the GitHub Actions workflow code you provided, incorporat
 - **Custom Actions:** For complex operations, consider creating custom reusable actions to modularize your workflow and improve maintainability.
 
 By effectively utilizing these steps and best practices, you can create robust and informative GitHub Actions workflows that automate various tasks associated with your software development life cycle.
+
+
+![image](https://github.com/GitHubCity313/GithubExpert/assets/7359227/f144cb95-ad09-4aaf-8973-82b111cf4c15)
+
+![image](https://github.com/GitHubCity313/GithubExpert/assets/7359227/8ef52ad7-0b75-448a-ba0f-2b5b24268eb1)
+
+![image](https://github.com/GitHubCity313/GithubExpert/assets/7359227/05cf239e-0e72-41af-b685-93a46768fce8)
+
