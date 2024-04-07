@@ -1,0 +1,50 @@
+name: CI/CD Node.js
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build application
+      run: npm run build
+
+    - name: Test application
+      run: npm run test
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-results
+        path: ./test-results
+
+  deploy-to-production:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: ${{ github.event.ref == 'refs/heads/main' }}
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Deploy application to production server
+      uses: my-custom-action/deploy-to-production@v1
+      with:
+        server-ip: ${{ secrets.SERVER_IP }}
+        username: ${{ secrets.SERVER_USERNAME }}
+        password: ${{ secrets.SERVER_PASSWORD }}
+        app-path: ./dist
+
