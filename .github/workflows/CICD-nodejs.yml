@@ -1,0 +1,43 @@
+name: CI/CD Node.js
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build application
+        run: npm run build
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: application-build
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: production
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: application-build
+
+      - name: Deploy application
+        run: scp -r dist/* user@example.com:/var/www/html
