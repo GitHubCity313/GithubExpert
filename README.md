@@ -4,7 +4,7 @@ https://www.youtube.com/watch?v=-hVG9z0fCac
 
 
 
-**Apa arti maksud dan fungsi serta mekanisme dari get sponsored github program , paka kita bisa mendapatkan uang dari program ini ?**
+**Apa arti maksud dan fungsi serta mekanisme dari get sponsored github program , apakah kita bisa mendapatkan uang dari program ini ?**
 
 
 
